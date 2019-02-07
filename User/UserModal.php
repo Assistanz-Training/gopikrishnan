@@ -3,7 +3,7 @@
 class UserModal {
 	
 		function addUser($postValue) {
-			$servername = "localhost";
+	        $servername = "localhost";
 	        $username = "root";
 	        $password = "";
 	        $dbname = "oli";

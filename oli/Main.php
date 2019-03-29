@@ -1,7 +1,7 @@
 <?php
 
 require 'Slim/Slim.php';
-include 'mainlibrary.php';
+include 'mainmodel.php';
 
 \Slim\Slim::registerAutoloader(); //Initialize the Slim Framework
 $driver = new \Slim\Slim();

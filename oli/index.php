@@ -4,14 +4,14 @@ require 'Slim/Slim.php';
 include 'gven_functions_library.php';
 
 \Slim\Slim::registerAutoloader(); //Initialize the Slim Framework
-$app = new \Slim\Slim();
+$driver = new \Slim\Slim();
 
 
-$app->get('/', function () {
+$driver->get('/', function () {
     echo "<center><h3><br><br><br>OLI TAXI !!!</h3></center><br><br>";
 });
 
-$app->post('/user/new', function () {
+$driver->post('/user/new', function () {
     $firstname = $_REQUEST['firstname'];
     $lastname = $_REQUEST['lastname'];
     $dob = $_REQUEST['dob'];
@@ -379,22 +379,22 @@ $app->post('/user/new', function () {
     echo json_encode($user, JSON_PRETTY_PRINT);
 });
 
-$app->get('/userslist', function () {
-    $beni = Users_List();
-    echo json_encode($beni, JSON_PRETTY_PRINT);
+$driver->get('/userslist', function () {
+    $olilist = Users_List();
+    echo json_encode($olilist, JSON_PRETTY_PRINT);
 });
 
-$app->get('/user/single/:username', function ($username) {
-    $beni = Single_User($username);
-    echo json_encode($beni, JSON_PRETTY_PRINT);
+$driver->get('/user/single/:username', function ($username) {
+    $olisingle = Single_User($username);
+    echo json_encode($olisingle, JSON_PRETTY_PRINT);
 });
 
-$app->get('/user/delete/:username', function ($username) {
-    $beni = UserDelete($username);
-    echo json_encode($beni, JSON_PRETTY_PRINT);
+$driver->get('/user/delete/:username', function ($username) {
+    $olidelete = UserDelete($username);
+    echo json_encode($olidelete, JSON_PRETTY_PRINT);
 });
 
-$app->post('/user/update', function () {
+$driver->post('/user/update', function () {
     $firstname = $_REQUEST['firstname'];
     $lastname = $_REQUEST['lastname'];
     $dob = $_REQUEST['dob'];
@@ -763,6 +763,6 @@ $app->post('/user/update', function () {
 });
 
 
-$app->run();
+$driver->run();
 
 ?>
